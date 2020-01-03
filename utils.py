@@ -7,20 +7,22 @@ index_img=0
 img_level=0
 img_name={}
 
-def quit(master):
+def quit_win(master):
     master.destroy()
     sys.exit(0)
+    
 def show_score(master, score):
     win=tk.Toplevel(master)
     win['bg']="green"
     win.resizable(False, False)
+    win.protocol("WM_DELETE_WINDOW", lambda master=master:quit_win(master))
     image=charger_image("./img/score.png")
     sc_image=tk.Label(win, bg='green', fg="yellow", relief="raised", image=image)
     sc_image.image=image
     sc_image.pack()
     sc_label=tk.Label(win, bg='green', fg="yellow", relief="raised", width=35, text="Votre score est: "+str(score))
     sc_label.pack()
-    tk.Button(win, text="OK", bg='yellow', fg="green", relief="raised", width=35, command=lambda master=master:quit(master)).pack()
+    tk.Button(win, text="OK", bg='yellow', fg="green", relief="raised", width=35, command=lambda master=master:quit_win(master)).pack()
 
 def charger_image(filename):
     img = Image.open(filename)
