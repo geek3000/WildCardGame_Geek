@@ -1,12 +1,16 @@
 from PIL import Image, ImageTk
 import os, random, pickle, sys
-import tkinter as tk
+from tkinter.messagebox import askokcancel
+
 
 
 index_img=0
 img_level=0
 img_name={}
-
+def quit_master(master):
+    if askokcancel("Quit", "Do you really wish to quit this game?"):
+        master.destroy()
+        sys.exit(0)
 def quit_win(master):
     master.destroy()
     sys.exit(0)

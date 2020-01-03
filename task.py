@@ -52,7 +52,7 @@ score=0
 master = Tk()
 master['bg']="green"
 master.resizable(False, False)
-
+master.protocol("WM_DELETE_WINDOW", lambda master=master:quit_master(master))
 master.title("Geek GCI")
 
 name = StringVar()
