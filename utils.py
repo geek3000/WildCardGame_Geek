@@ -1,7 +1,7 @@
 from PIL import Image, ImageTk
 import os, random, pickle, sys
 from tkinter.messagebox import askokcancel
-
+import tkinter as tk
 
 
 index_img=0
